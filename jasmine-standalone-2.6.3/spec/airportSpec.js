@@ -16,11 +16,20 @@ describe('AirportChallenge', function() {
     plane.takeOff(airport);
     expect(airport.planes()).not.toContain(plane);
   });
+
   it("plane can't land if weather is stormy", function() {
     airport.isStormy = true;
     plane.land(airport);
     expect(airport.planes()).not.toContain(plane);
   })
+
+  it("plane can't take off if weather is stormy", function() {
+    airport.isStormy = true;
+    plane.takeOff(airport);
+    expect(airport.planes()).not.toContain(plane);
+  })
+
+
   it("plane can't land if airport is full", function() {
     plane2 = new Plane();
     plane3 = new Plane();

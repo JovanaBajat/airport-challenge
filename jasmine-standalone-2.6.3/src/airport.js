@@ -15,6 +15,9 @@ Airport.prototype.clearForLanding = function(plane) {
 };
 
 Airport.prototype.clearForTakingOff = function(plane) {
+	if (!this.isStormy){
 	this._planes.pop(plane)
+}
+else {}
 }
 
