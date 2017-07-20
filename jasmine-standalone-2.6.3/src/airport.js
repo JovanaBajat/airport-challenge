@@ -1,6 +1,6 @@
 function Airport() {
 	this._planes = [];
-	this.isStormy = false;
+	this.isStormy = Math.random() < 0.5 ? true : false;
 	this.capacity = 3;
 }
 Airport.prototype.planes = function () {

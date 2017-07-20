@@ -8,11 +8,13 @@ describe('AirportChallenge', function() {
   });
 
   it("plane can land at the airport", function() {
+    airport.isStormy = false;
     plane.land(airport);
     expect(airport.planes()).toContain(plane);
   });
 
   it("plane can leave the airport", function() {
+    airport.isStormy = false;
     plane.takeOff(airport);
     expect(airport.planes()).not.toContain(plane);
   });
